@@ -1,0 +1,14 @@
+.background-image{
+    background-image: url("./images/indianRailway.jpeg");
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header{
+    text-align: center;
+    color: blue;
+}
+.bdr{
+    background-color: white;
+}

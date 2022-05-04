@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Book Ticket</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="mt-5">
+        <div class="row background-image">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <form class="form-container mx-5 mt-5 mb-5 bdr" method="post" action="javascript:void(0);">
+
+                            <div class="mt-5 mb-5">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img src="/images/azadiLogo.jpg" alt="Azadi Logo"
+                                            style="width: 250px; height: 150px;">
+                                    </div>
+                                    <div class="col-lg-9 header mt-5">
+                                        <h1>BOOK TICKET</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-5">
+                                    <div>
+                                        <label class="text-primary">FROM *</label>
+                                    </div>
+
+                                    <input type="text" class="form-control" list="browsers" id="from">
+                                    <datalist id="browsers">
+                                        <option value="NAGPUR - NGP">
+                                        <option value="MYSURU JN - MYS">
+                                        <option value="NEW DELHI NDLS">
+                                        <option value="NASHIK ROAD - NK">
+                                        <option value="MATHURA JN - MTJ">
+                                        <option value="THANE - TNA">
+                                    </datalist>
+                                    <span class="mb-3 text-danger" id="messageInputFrom"></span>
+                                </div>
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="text-primary">DD/MM/YY *</label>
+                                    <input type="date" class="form-control" id="inputDate">
+                                    <span class="mb-3 text-danger" id="messageInputDate"></span>
+                                </div>
+
+                                <div class="col-lg-1">
+
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-lg-3">
+                                </div>
+                                <div class="col-lg-1">
+                                    <img src="/images/swapLogo.png" alt="Swap logo" style="width: 20px; height: 20px;" onclick="swap()">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-5">
+                                    <div>
+                                        <label class="text-primary">TO *</label>
+                                    </div>
+
+                                    <input type="text" class="form-control" list="browsers" id="to">
+                                    <datalist id="browsers">
+                                        <option value="NAGPUR - NGP">
+                                        <option value="MYSURU JN - MYS">
+                                        <option value="NEW DELHI NDLS">
+                                        <option value="NASHIK ROAD - NK">
+                                        <option value="MATHURA JN - MTJ">
+                                        <option value="THANE - TNA">
+                                    </datalist>
+                                    <span class="mb-3 text-danger" id="messageInputTo"></span>
+                                </div>
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <label class="text-primary">All Classes:</label>
+                                    <select class="form-control" id="selectAllClasses">
+                                        <option value="">Select your option</option>
+                                        <option>Anubhuti Class (EA)</option>
+                                        <option>AC First Class (1A)</option>
+                                        <option>Exec. Chair Car (EC)</option>
+                                        <option>AC 2 Tier (2A)</option>
+                                        <option>First Class (FC)</option>
+                                        <option>AC 3 Tier (3A)</option>
+                                    </select>
+                                    <span class="mb-3 text-danger" id="messageAllClasses"></span>
+                                </div>
+
+                                <div class="col-lg-1">
+
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-5">
+                                    <label class="text-primary">Category:</label>
+                                    <select class="form-control" id="selectCategory">
+                                        <option value="">Select your option</option>
+                                        <option>Ladies</option>
+                                        <option>Lower Berth/Senior.Citizen</option>
+                                        <option>Divyaang</option>
+                                        <option>Tatkal</option>
+                                        <option>Premium Tatkal</option>
+                                    </select>
+                                    <span class="mb-3 text-danger" id="messageCategory"></span>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-lg-1">
+
+                                </div>
+                                <div class="col-lg-5">
+                                    <button type="submit" class="btn btn-success mb-5"
+                                        onclick="validation()">Submit</button>
+                                    <button type="reset" class="btn btn-danger mb-5" id="reset">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
