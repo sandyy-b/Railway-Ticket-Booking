@@ -7,8 +7,22 @@
 }
 .header{
     text-align: center;
-    color: blue;
+    color: rgb(33,61,119);
 }
 .bdr{
     background-color: white;
+}
+.headPrimary{
+    margin-top: 250px;
+    padding-left: 150px;
+    color: white;
+    font-size: 50px;
+}
+.headSecondry{
+    color: white;
+    padding-left: 200px;
+    font-size: 20px;
+}
+.checkboxColor{
+    color: rgb(33,61,119);
 }
