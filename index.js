@@ -6,8 +6,18 @@ window.addEventListener('load', function () {
             let inputid = e.target.id
             let inputval = document.getElementById(inputid).value;
             if (inputval != '') {
-                if (document.getElementById(inputid).nextElementSibling) {
-                    document.getElementById(inputid).nextElementSibling.innerHTML = '';
+                if (document.getElementById(inputid).parentNode.querySelector('.text-danger')) {
+                    document.getElementById(inputid).parentNode.querySelector('.text-danger').innerHTML = '';
+                }
+            }
+        });
+
+        formInput[i].addEventListener('change', function (e) {
+            let inputid = e.target.id
+            let inputval = document.getElementById(inputid).value;
+            if (inputval != '') {
+                if (document.getElementById(inputid).parentNode.querySelector('.text-danger')) {
+                    document.getElementById(inputid).parentNode.querySelector('.text-danger').innerHTML = '';
                 }
             }
         });
@@ -23,7 +33,6 @@ function validation() {
 
     if (inputFrom == '') {
         document.getElementById("messageInputFrom").innerHTML = 'Please Enter Your Start Station!';
-        // location.reload(true);
     }
     if (inputDate == '') {
         document.getElementById("messageInputDate").innerHTML = 'Please Enter Date!';
@@ -37,7 +46,7 @@ function validation() {
     if (inputCategory == '') {
         document.getElementById("messageCategory").innerHTML = 'Please Select a Category!';
     }
-    else if(inputFrom == inputTo){
+    else if (inputFrom == inputTo) {
         document.getElementById("messageInputTo").innerHTML = 'Start Station and Destination cannot be same!';
     }
     else {
@@ -72,20 +81,5 @@ function swap() {
 }
 
 function checkDate() {
-    //     let today = new Date(),
-    //     day = today.getDate(),
-    //     month = today.getMonth()+1,
-    //     year = today.getFullYear();
-    //          if(day<10){
-    //                 day='0'+day
-    //             } 
-    //         if(month<10){
-    //             month='0'+month
-    //         }
-    //         today = year+'-'+month+'-'+day;
-
-    // document.getElementById("inputDate").setAttribute("min", today);
-    // document.getElementById("inputDate").setAttribute("value", today);
-    document.getElementById('inputDate').setAttribute('min', new Date().toISOString().split('T')[0])
-
+    document.getElementById('inputDate').setAttribute('min', new Date().toISOString().split('T')[0]);
 }

@@ -1,4 +1,4 @@
-window.addEventListener('load', function (){
+window.addEventListener('load', function () {
     displayData();
 });
 
@@ -9,7 +9,7 @@ function displayData() {
         let sno = 1;
         for (let k in getData) {
             html +=
-            `<tr>
+                `<tr>
                 <td>${sno}</td>
                 <td>${getData[k].from}</td>
                 <td>${getData[k].to}</td>
@@ -23,17 +23,17 @@ function displayData() {
     }
 }
 
-function search(){
+function search() {
     let filter = document.getElementById('search').value.toUpperCase();
     let getTableData = document.getElementById('tableBody');
     let tableRow = getTableData.getElementsByTagName('tr');
-    for(let i = 0; i < tableRow.length; i++){
+    for (let i = 0; i < tableRow.length; i++) {
         let td = tableRow[i].getElementsByTagName('td')[1];
-        if(td){
+        if (td) {
             let textValue = td.textContent || td.innerHTML;
-            if(textValue.toUpperCase().indexOf(filter) > -1){
+            if (textValue.toUpperCase().indexOf(filter) > -1) {
                 tableRow[i].style.display = '';
-            }else{
+            } else {
                 tableRow[i].style.display = "none";
             }
         }
